@@ -52,9 +52,12 @@ def predict(a,m,slucaj):
     pred={}
     p=1
     for klasaA in a:
-        p=p*a.iloc[0][klasaA]
+#        p=p*a.iloc[0][klasaA]
+        p=p*math.log1p(a.iloc[0][klasaA])
         for klasaS in slucaj:
-            p=p*m[klasaS].loc[slucaj.iloc[0][klasaS]].loc[klasaA]  
+#            p=p*m[klasaS].loc[slucaj.iloc[0][klasaS]].loc[klasaA]
+            p=p+math.log1p(m[klasaS].loc[slucaj.iloc[0][klasaS]].loc[klasaA])
+            
         pred[klasaA]=p
         p=1
     return pred
@@ -70,6 +73,8 @@ for i in range(len(new_data)):
        
 print(new)
 
+output = new
+output.to_csv(r'output.csv', index = False)
 
 
 
