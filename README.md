@@ -1,4 +1,4 @@
-# Naive Bayes Drug Classification
+# Naive Bayes - Custom Implementation
 
 ## Project Overview
 This project showcases a custom implementation of the Naive Bayes classifier to classify drugs based on patient attributes. It is designed as an educational tool to understand the mechanics behind the Naive Bayes algorithm and apply it to a simple medical dataset.
